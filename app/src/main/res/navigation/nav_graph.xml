@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/menuFragment">
+
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="ru.kpfu.itis.probabilitytheoryapp.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menuFragment_to_combinationFragment"
+            app:destination="@id/combinationFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_permutationFragment"
+            app:destination="@id/permutationFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_placementsFragment"
+            app:destination="@id/placementsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/combinationFragment"
+        android:name="ru.kpfu.itis.probabilitytheoryapp.CombinationFragment"
+        android:label="fragment_combination"
+        tools:layout="@layout/fragment_combination" />
+    <fragment
+        android:id="@+id/permutationFragment"
+        android:name="ru.kpfu.itis.probabilitytheoryapp.PermutationFragment"
+        android:label="fragment_permutation"
+        tools:layout="@layout/fragment_permutation" />
+    <fragment
+        android:id="@+id/placementsFragment"
+        android:name="ru.kpfu.itis.probabilitytheoryapp.PlacementsFragment"
+        android:label="fragment_placements"
+        tools:layout="@layout/fragment_placements" />
+</navigation>

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background = "@drawable/grad3"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        tools:context=".PermutationFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/tv_place"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="25dp"
+            android:text="Перестановки"
+            android:textSize="25sp"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/rg_place"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/rg_place"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:layout_marginBottom="25dp"
+            app:layout_constraintBottom_toTopOf="@+id/iv_perm_without"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_place">
+
+            <RadioButton
+                android:id="@+id/rb_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="С повторениями"
+                android:textColor="@color/white"
+                />
+
+            <RadioButton
+                android:id="@+id/rb_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Без повторений"
+                android:textColor="@color/white"
+                />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/tv_k"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="k = "
+            android:textSize="30sp"
+            android:textColor="@color/white"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/button"
+            app:layout_constraintEnd_toStartOf="@+id/til_k"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_perm_with"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_k"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:layout_constraintStart_toEndOf="@id/tv_k"
+            app:layout_constraintEnd_toStartOf="@id/btn_k"
+            app:layout_constraintTop_toBottomOf="@id/iv_perm_with"
+            app:layout_constraintBottom_toTopOf="@id/button"
+            >
+            <EditText
+                android:id = "@+id/et_k"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="number"
+                android:maxLength="2"
+                android:hint="" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <TextView
+            android:id="@+id/tv_n"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="n = "
+            android:textSize="30sp"
+            android:visibility="invisible"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/button"
+            app:layout_constraintEnd_toStartOf="@+id/til_n"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_perm_without"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_n"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toStartOf="@id/btn_add_n"
+            app:layout_constraintStart_toEndOf="@id/tv_n"
+            app:layout_constraintTop_toBottomOf="@id/iv_perm_without">
+            <EditText
+                android:id="@+id/et_n"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint=""
+                android:maxLength="4"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <ImageView
+            android:id="@+id/iv_perm_with"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/permutationwith"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/til_n"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rg_place" />
+
+        <ImageView
+            android:id="@+id/iv_perm_without"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:visibility="invisible"
+            android:layout_marginBottom="48dp"
+            android:src="@drawable/permutationwithout"
+            app:layout_constraintBottom_toTopOf="@id/til_n"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rg_place" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Подсчитать"
+            android:visibility="invisible"
+            android:layout_marginTop="36dp"
+            android:backgroundTint="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_n"
+            />
+
+        <Button
+            android:id="@+id/btn_k"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Сохранить"
+            android:layout_marginStart="30dp"
+            android:backgroundTint="@color/black"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/til_k"
+            app:layout_constraintTop_toBottomOf="@id/iv_perm_with"
+            app:layout_constraintBottom_toTopOf="@id/button"
+             />
+
+        <Button
+            android:id="@+id/btn_add_n"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Добавить"
+            android:layout_marginStart="30dp"
+            android:backgroundTint="@color/black"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/til_n"
+            app:layout_constraintTop_toBottomOf="@id/iv_perm_without"/>
+
+        <ImageButton
+            android:id="@+id/btn_delete_n"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_baseline_delete_outline_24"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_add_n"
+            app:layout_constraintTop_toBottomOf="@id/iv_perm_without"
+            />
+
+        <TextView
+            android:id="@+id/tv_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:text=""
+            android:textSize="19sp"
+            app:layout_constraintBottom_toTopOf="@+id/til_k"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_perm_with" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+
+
+

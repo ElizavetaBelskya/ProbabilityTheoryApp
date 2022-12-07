@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background = "@drawable/math2"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MenuFragment">
+
+
+    <TextView
+        android:id="@+id/tv_menu"
+        style="@style/Widget.AppCompat.TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="104dp"
+        android:gravity="top|center"
+        android:textColor="@color/white"
+        android:text="Основы теории вероятностей"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@id/btn_combinations"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <Button
+        android:id="@+id/btn_combinations"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Сочетания"
+        app:cornerRadius="12dp"
+        android:backgroundTint = "@color/black"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toTopOf="@id/btn_placements"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_menu" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_placements"
+        style=""
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Размещения"
+        app:cornerRadius="12dp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint = "@color/black"
+        app:layout_constraintBottom_toTopOf="@id/btn_permutations"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_combinations" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_permutations"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Перестановки"
+        app:cornerRadius="12dp"
+        android:backgroundTint = "@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_placements" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
